@@ -21,7 +21,6 @@ services:
       - LABEL_STUDIO_USE_REDIS=true
     ports:
       - 9090:9090
-      #- 8080:8080
     depends_on:
       - redis
     links:
@@ -31,11 +30,11 @@ services:
       - "./data/server:/data"
       - "./logs:/tmp"
     restart: always
-  # label-studio:
-  #   container_name: label-studio
-  #   image: heartexlabs/label-studio:latest
-  #   ports:
-  #     - "8080:8080"
-  #   volumes:
-  #     - "./mydata:/label-studio/data"
-  #   restart: always
+  label-studio:
+    container_name: label-studio
+    image: heartexlabs/label-studio:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - "./mydata:/label-studio/data"
+    restart: always
