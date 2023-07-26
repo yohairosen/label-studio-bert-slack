@@ -25,16 +25,16 @@ services:
       - redis
     links:
       - redis
-      - label-studio
+      # - label-studio
     volumes:
       - "./data/server:/data"
       - "./logs:/tmp"
     restart: always
-  label-studio:
-    container_name: label-studio
-    image: heartexlabs/label-studio:latest
-    ports:
-      - "8080:8080"
-    volumes:
-      - "./mydata:/label-studio/data"
-    restart: always
+  # label-studio:
+  #   container_name: label-studio
+  #   image: heartexlabs/label-studio:latest
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - "./mydata:/label-studio/data"
+  #   restart: always
