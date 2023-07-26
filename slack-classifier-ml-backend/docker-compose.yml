@@ -25,6 +25,7 @@ services:
       - redis
     links:
       - redis
+      - label-studio
     volumes:
       - "./data/server:/data"
       - "./logs:/tmp"
