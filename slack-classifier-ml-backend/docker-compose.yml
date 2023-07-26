@@ -27,3 +27,12 @@ services:
     volumes:
       - "./data/server:/data"
       - "./logs:/tmp"
+  label-studio:
+    container_name: label-studio
+    image: heartexlabs/label-studio:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./mydata:/label-studio/data"
+    depends_on:
+      - server
