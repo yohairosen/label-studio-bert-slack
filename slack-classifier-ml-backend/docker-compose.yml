@@ -9,6 +9,7 @@ services:
       - "./data/redis:/data"
     expose:
       - 6379
+    restart: always
   server:
     container_name: server
     build: .
@@ -27,6 +28,7 @@ services:
     volumes:
       - "./data/server:/data"
       - "./logs:/tmp"
+    restart: always
   label-studio:
     container_name: label-studio
     image: heartexlabs/label-studio:latest
@@ -36,3 +38,4 @@ services:
       - "./mydata:/label-studio/data"
     depends_on:
       - server
+    restart: always
