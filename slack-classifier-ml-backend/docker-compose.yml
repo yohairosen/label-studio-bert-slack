@@ -21,7 +21,7 @@ services:
       - LABEL_STUDIO_USE_REDIS=true
     ports:
       - 9090:9090
-      - 8080:8080
+      #- 8080:8080
     depends_on:
       - redis
     links:
